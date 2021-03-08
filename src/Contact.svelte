@@ -1,14 +1,5 @@
-{#if page_show}
-<div>
-  <div class="modal-overlay" data-close on:click={overlay_click} transition:fade={{duration: 150}}>
-    <div class="modal-container">
-      <main><p>Contact Skechers</p></main>
-    </div>
-  </div>
-</div>
-{/if}
-
 <script>
+	import { Tabs, TabList, TabPanel, Tab } from './tabs.js';
 	import { fade } from 'svelte/transition';
 
 	function overlay_click(e) {
@@ -18,6 +9,37 @@
 
 	export let page_show = false;
 </script>
+
+{#if page_show}
+	<div>
+		<!-- <div class="modal-overlay" data-close on:click={overlay_click} transition:fade={{duration: 150}}>
+			<div class="modal-container">
+				<main><p>Contact Skechers</p></main>
+			</div>
+		</div> -->
+
+		<h1>Contact Skechers</h1>
+		<Tabs>
+			<TabList>
+				<Tab>One</Tab>
+				<Tab>Two</Tab>
+				<Tab>Three</Tab>
+			</TabList>
+
+			<TabPanel>
+				<h2>Panel One</h2>
+			</TabPanel>
+
+			<TabPanel>
+				<h2>Panel Two</h2>
+			</TabPanel>
+
+			<TabPanel>
+				<h2>Panel Three</h2>
+			</TabPanel>
+		</Tabs>
+	</div>
+{/if}
 
 <style>
 	.modal-overlay {
