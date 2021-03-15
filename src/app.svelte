@@ -14,7 +14,7 @@
 </script>
 
 <Header/>
-    <Sidebar bind:page_show={sidebar_show }/>
+    <Sidebar bind:menuitems_show={sidebar_show }/>
     <Navbar bind:sidebar={sidebar_show}/>
     <Content/>
 <Footer/>
